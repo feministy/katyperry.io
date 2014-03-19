@@ -1,5 +1,4 @@
-$serif: 'Bitter', Georgia, serif;
-$sanserif: 'Open Sans', Arial, sans-serif;
+$sanserif: 'Helvetica', Arial, sans-serif;
 $text-color-main: #444444;
 $text-color-darker: #333333;
 $nav-spacing: 20px;
@@ -16,10 +15,6 @@ body {
   font-size: 1em;
   font-weight: 400;
   color: $text-color-main;
-}
-
-p {
-  font-family: $serif;
 }
 
 a {
