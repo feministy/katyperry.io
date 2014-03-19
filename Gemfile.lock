@@ -111,7 +111,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   activesupport
-  database_cleaner (= 1.2.0)
+  database_cleaner
   debugger
   grape
   pg
