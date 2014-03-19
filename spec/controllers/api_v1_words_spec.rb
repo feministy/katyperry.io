@@ -22,10 +22,6 @@ describe '/api/v/words.json' do
   end
 
   it 'returns 5 words' do
-    expect(@words.length).to eq(5)
-  end
-
-  it 'returns words from dictionary' do
-    expect(Helpers::DICTIONARY).to include(@words)
+    expect(@words).to have_exactly(5).items
   end
 end
