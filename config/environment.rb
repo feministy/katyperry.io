@@ -10,6 +10,7 @@ require 'pg'
 require 'active_record'
 require 'logger'
 require 'sinatra'
+require 'sinatra/contrib'
 require 'sinatra/reloader' if development?
 require 'slim'
 require 'sass'
