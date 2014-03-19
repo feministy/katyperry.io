@@ -4,6 +4,6 @@ class Word < ActiveRecord::Base
   validates_presence_of :text
 
   def lowercase
-    self.downcase
+    text.downcase
   end
 end
