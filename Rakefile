@@ -4,7 +4,9 @@ require 'active_support/core_ext'
 require 'pathname'
 require 'sinatra'
 require 'active_record'
-require_relative 'config/database'
+
+require_relative 'config/rake'
+
 
 namespace :generate do
   desc "Create an empty model in app/models, e.g., rake generate:model NAME=User"
