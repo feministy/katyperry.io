@@ -1,3 +1,6 @@
+APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
+APP_NAME = APP_ROOT.basename.to_s
+
 # Log queries to STDOUT in development
 if Sinatra::Application.development?
   ActiveRecord::Base.logger = Logger.new(STDOUT)
