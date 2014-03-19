@@ -1,5 +1,3 @@
-require 'sinatra/contrib'
-
 namespace '/api/v1/word.json' do
   get '&all_caps' do
     json word: get_word.upcase

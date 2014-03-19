@@ -1,5 +1,3 @@
-require 'sinatra/contrib'
-
 namespace '/api/v1/words.json&count=:num' do
   get '&capitalized' do
     json words: get_words(params[:num]).map(&:capitalize)
