@@ -29,7 +29,6 @@ group :development do
 end
 
 group :test do
-  gem 'factory_girl'
-  gem 'faker'
+  gem 'database_cleaner'
   gem 'rspec'
 end

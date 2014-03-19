@@ -1,7 +1,7 @@
 ENV['RACK_ENV'] = 'test'
 
 require 'rack/test'
-require 'factory_girl'
+require 'helpers'
 require 'database_cleaner'
 require_relative '../config/environment'
 
@@ -17,7 +17,18 @@ end
 RSpec.configure do |config|
   config.order = "random"
   config.include RSpecMixin
-  config.include FactoryGirl::Syntax::Methods
-end
+  config.include Helpers
 
-FactoryGirl.find_definitions
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
+end
