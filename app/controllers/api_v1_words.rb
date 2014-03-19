@@ -10,7 +10,6 @@ namespace '/api/v1/words.json&count=:num' do
   end
 
   get '' do
-    json words: get_words(params[:num]), taco: @taco
+    json words: get_words(params[:num])
   end
-
 end
