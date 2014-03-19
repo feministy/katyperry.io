@@ -79,6 +79,30 @@ namespace :generate do
       EOF
     end
   end
+
+  task :controller do
+    unless ENV.has_key?('NAME')
+      raise "Must specificy controller name, e.g., rake generate:controller NAME=api_v1_taco"
+  end
+
+    controller_name     = ENV['NAME']
+    controller_filename = ENV['NAME'].underscore + '.rb'
+    controller_path = APP_ROOT.join('app', 'controllers', controller_filename)
+
+    if File.exist?(controller_path)
+      raise "ERROR: Controller file '#{controller_path}' already exists"
+    end
+
+    puts "Creating #{controller_path}"
+    File.open(controller_path, 'w+') do |f|
+      f.write(<<-EOF.strip_heredoc)
+        namespace '/api/v1/' do
+          get '' do
+          end
+        end
+      EOF
+    end
+  end
 end
 
 namespace :db do
