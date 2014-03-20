@@ -1,3 +1,5 @@
 class Sentence < ActiveRecord::Base
-  validates_presence_of :text, :excuse
+  belongs_to :album
+
+  validates_presence_of :text
 end
