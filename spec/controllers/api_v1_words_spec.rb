@@ -10,7 +10,7 @@ describe '/api/v/words.json' do
     before do
       get 'api/v1/words.json&count=5'
       result = JSON.parse(last_response.body)
-      @words = result["words"]
+      @words = result["items"]
     end
 
     it 'works' do
@@ -34,7 +34,7 @@ describe '/api/v/words.json' do
     before do
       get 'api/v1/words.json&count=5&capitalized'
       result = JSON.parse(last_response.body)
-      @words = result["words"]
+      @words = result["items"]
     end
 
     it 'works' do
@@ -46,7 +46,7 @@ describe '/api/v/words.json' do
     before do
       get 'api/v1/words.json&count=5&all_caps'
       result = JSON.parse(last_response.body)
-      @words = result["words"]
+      @words = result["items"]
     end
 
     it 'works' do

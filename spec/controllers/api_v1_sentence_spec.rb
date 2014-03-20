@@ -11,7 +11,7 @@ describe '/api/v1/sentence.json' do
     before do
       get '/api/v1/sentence.json'
       @result = JSON.parse(last_response.body)
-      @sentence = @result["sentence"]
+      @sentence = @result["text"]
     end
 
     it 'works' do

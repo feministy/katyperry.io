@@ -8,7 +8,7 @@ namespace '/api/v1/sentence.json' do
   end
 
   get '' do
-    json content: get_sentence
+    json text: get_sentence
   end
 end
 

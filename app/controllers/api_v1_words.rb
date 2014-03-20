@@ -1,13 +1,13 @@
 namespace '/api/v1/words.json&count=:num' do
   get '&capitalized' do
-    json words: get_words(params[:num]).map(&:capitalize)
+    json items: get_words(params[:num]).map(&:capitalize)
   end
 
   get '&all_caps' do
-    json words: get_words(params[:num]).map(&:upcase)
+    json items: get_words(params[:num]).map(&:upcase)
   end
 
   get '' do
-    json words: get_words(params[:num])
+    json items: get_words(params[:num])
   end
 end
