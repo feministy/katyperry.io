@@ -36,4 +36,32 @@ describe '/api/v1/sentences.json' do
       @result = JSON.parse(last_response.body)
     end
   end
+
+  context '&excuse=false' do
+    before do
+      get '/api/v1/sentences.json&count=10&excuse=true'
+      @result = JSON.parse(last_response.body)
+    end
+  end
+
+  context '&album=one_of_the_boys' do
+    before do
+      get '/api/v1/sentences.json&count=10&album=one_of_the_boys'
+      @result = JSON.parse(last_response.body)
+    end
+  end
+
+  context '&album=teenage_dream' do
+    before do
+      get '/api/v1/sentences.json&count=10&album=teenage_dream'
+      @result = JSON.parse(last_response.body)
+    end
+  end
+
+  context '&album=prism' do
+    before do
+      get '/api/v1/sentences.json&count=10&album=prism'
+      @result = JSON.parse(last_response.body)
+    end
+  end
 end
