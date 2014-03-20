@@ -1,10 +1,7 @@
 namespace '/api/v1/sentence.json' do
-  get '&excuse=false' do
-    # todo exclude excuse
-  end
-
-  get '&excuse=true' do
-    # todo excuse only
+  get '&excuse=:bool' do
+    bool = params[:bool]
+    json text: get_sentence(bool)
   end
 
   get '' do
