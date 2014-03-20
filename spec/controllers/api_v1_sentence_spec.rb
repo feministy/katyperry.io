@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe '/api/v1/sentence.json' do
   before do
-    @lyric = "She's got that one international smile."
-    @album = Album.create!(title: "PRISM")
-    sentence = Sentence.create!(text: @lyric, excuse: false, album: @album)
+    @album = create_album_prism
+    sentence = create_sentence(@album)
+    @lyric = sentence.text
   end
 
   context '/' do
@@ -25,8 +25,8 @@ describe '/api/v1/sentence.json' do
 
   context '&excuse=true' do
     before do
-      @excuse = "I woke up in Vegas."
-      excuse = Sentence.create!(text: @excuse, excuse: true, album: @album)
+      excuse = create_excuse(@album)
+      @excuse = excuse.text
       get '/api/v1/sentence.json&excuse=true'
       @result = JSON.parse(last_response.body)
       @sentence = @result["text"]
