@@ -1,15 +1,19 @@
 namespace '/api/v1/sentences.json&count=:num' do
   get '' do
-    # todo
-    # get random sentence
+    json items: get_sentences(params[:num])
   end
 
-  get '&excuses=false' do
-    # todo exclude excuses
+  get '&excuses=:bool' do
+    json items: get_sentences(params[:num], params[:bool])
   end
 
-  get '&excuses=true' do
-    # todo excuses only
+  get '&album=one_of_the_boys' do
+  end
+
+  get '&album=teenage_dream' do
+  end
+
+  get '&album=prism' do
   end
 end
 
