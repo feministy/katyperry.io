@@ -1,8 +1,4 @@
 namespace '/api/v1/sentences.json&count=:num' do
-  get '' do
-    json items: get_sentences(params[:num])
-  end
-
   get '&excuses=:bool' do
     json items: get_sentences(params[:num], params[:bool])
   end
@@ -14,6 +10,10 @@ namespace '/api/v1/sentences.json&count=:num' do
   end
 
   get '&album=prism' do
+  end
+
+  get '' do
+    json items: get_sentences(params[:num])
   end
 end
 
