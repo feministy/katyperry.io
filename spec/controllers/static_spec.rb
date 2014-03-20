@@ -11,7 +11,7 @@ describe 'Static Controller' do
     end
 
     it 'gets index.slim' do
-      expect(last_response.body).to include("The perkiest ipsum API ever.")
+      expect(last_response.body).to include("Katy Perry")
     end
   end
 
