@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe '/api/v/words.json' do
   before do
-    @dictionary = dictionary.map { |w| Word.create!(text: w) }
+    @dictionary = create_words(10)
     @dict_words = @dictionary.map(&:text)
   end
 

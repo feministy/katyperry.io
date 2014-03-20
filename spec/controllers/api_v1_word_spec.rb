@@ -2,8 +2,7 @@ require 'spec_helper'
 
 describe '/api/v/word.json' do
   before do
-    @word = Word.create!(text: "smile")
-    @word = { "text" => @word.text }
+    @word = create_word
   end
 
   it 'is successful' do
@@ -17,14 +16,12 @@ describe '/api/v/word.json' do
   end
 
   it '&all_caps' do
-    @word["text"] = @word["text"].upcase
     get '/api/v1/word.json&all_caps'
-    expect(last_response.body).to eq(@word.to_json)
+    expect(last_response.body).to include(@word.text.upcase)
   end
 
   it '&capitalized' do
-    @word["text"] = @word["text"].capitalize
     get '/api/v1/word.json&capitalized'
-    expect(last_response.body).to eq(@word.to_json)
+    expect(last_response.body).to include(@word.text.capitalize)
   end
 end
