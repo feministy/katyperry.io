@@ -4,9 +4,9 @@ module Helpers
   include SeedHelpers
 
   def create_albums
-    Album.create!(title: "One of the Boys")
-    Album.create!(title: "Teenage Dream")
-    Album.create!(title: "PRISM")
+    @ootb = create_album_ootb
+    @td = create_album_td
+    @prism = create_album_prism
   end
 
   def create_album_ootb
