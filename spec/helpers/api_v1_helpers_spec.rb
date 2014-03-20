@@ -4,8 +4,8 @@ describe 'ApiV1Helpers' do
   before do
     @album = create_album_prism
     @words = create_words(10)
-    @sentences = create_sentences(10, @prism)
-    @excuses = create_excuses(10, @prism)
+    @sentences = create_sentences(10, @album)
+    @excuses = create_excuses(10, @album)
   end
 
   context '#get_word' do
